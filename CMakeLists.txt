@@ -27,4 +27,11 @@ message("lib1_interface_include: ${lib1_interface_include}")
 message("lib2_interface_include: ${lib2_interface_include}")
 message("lib1_link: ${lib1_link}")
 message("lib2_link: ${lib2_link}")
-#message(": ${}")
+
+#see https://stackoverflow.com/questions/51353110/how-do-i-output-the-result-of-a-generator-expression-in-cmake
+#
+#One possible way to generate debug messages is to add a custom target,
+#
+#add_custom_target(genexdebug COMMAND ${CMAKE_COMMAND} -E echo "$<...>")
+
+file(GENERATE OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/testing.txt CONTENT "$<TARGET_PROPERTY:lib2,INCLUDE_DIRECTORIES>")

@@ -1,0 +1,1 @@
+C:/Users/User/QtProjects/TestingCmake/dir2/include;C:/Users/User/QtProjects/TestingCmake/dir1/include
